@@ -10,6 +10,7 @@ const corsOptions = {
   credentials: true,
 }
 app.use(cors(corsOptions));
+//* ------------------------------ */
 
 //* Connection */
 dotenv.config({ path: "./config.env" });

@@ -16,12 +16,12 @@ async function home_page(req, res) {
 async function register(req, res) {
     // console.log(req.body);
     try {
-        const { name, email, mobile } = req.body;
+        const { name, email, password } = req.body;
         const Reg_userExist = await UsersModel.findOne({ email: email });
         if (Reg_userExist) {
             return res.status(400).json({ massage: "User already registered" });
         }
-        const userCreated = await UsersModel.create({ name, email, mobile });
+        const userCreated = await UsersModel.create({ name, email, password });
         res.status(200).json({ message: userCreated });
 
     } catch (error) {
@@ -40,7 +40,7 @@ async function login(req, res) {
             if (Log_userExist.password === password) {
                 console.log("User Login Successfully");
                 return res.status(200).json({ message: "User LOgin Successfully" });
-                
+
             } else {
                 console.log("Wrong Password");
                 return res.status(404).json({ message: "Password did not Match" });
