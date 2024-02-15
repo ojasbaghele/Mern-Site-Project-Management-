@@ -9,7 +9,7 @@ export default function Login() {
   const [name, set_name] = useState("");
   const [email, set_email] = useState("");
   const [password, set_password] = useState("");
-  const [pageName, setPageName] = useState("Log In");
+  const [pageName, setPageName] = useState("Sign Up");
 
 
   //! ------------------------ Page State  --------------------------- 
@@ -53,8 +53,9 @@ export default function Login() {
 
   async function LogIn(event) {
     event.preventDefault();
-    if (page == "Log In") {
+    if (pageName == "Log In") {
       let Login_user = {
+        "pageName": pageName,
         "email": email,
         "password": password
       }
@@ -76,6 +77,7 @@ export default function Login() {
       }
     } else {
       let Signup_user = {
+        "pageName": pageName,
         "name": name,
         "email": email,
         "password": password

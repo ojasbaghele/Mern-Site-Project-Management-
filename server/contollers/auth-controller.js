@@ -32,19 +32,35 @@ async function register(req, res) {
 //TODO: Check if userdata is stored in database, Check if email & password are correct =>
 async function login(req, res) {
     try {
-        const { email, password } = req.body;
-        const Log_userExist = await UsersModel.findOne({ email: email });
-        if (!Log_userExist) {
-            return res.status(404).json({ message: "User does not exist in Database" });
-        } else {
-            if (Log_userExist.password === password) {
-                console.log("User Login Successfully");
-                return res.status(200).json({ message: "User LOgin Successfully" });
-
+        const { pageName } = req.body;
+        if (pageName == "Log In") {
+            const { email, password } = req.body;
+            const Log_userExist = await UsersModel.findOne({ email: email });
+            if (!Log_userExist) {
+                return res.status(404).json({ message: "User does not exist in Database" });
             } else {
-                console.log("Wrong Password");
-                return res.status(404).json({ message: "Password did not Match" });
+                if (Log_userExist.password === password) {
+                    console.log("User Login Successfully");
+                    return res.status(200).json({ message: "User LOgin Successfully" });
+
+                } else {
+                    console.log("Wrong Password");
+                    return res.status(404).json({ message: "Password did not Match" });
+                }
             }
+        }
+        if (pageName == "Sign Up") {
+            const { name, email, password } = req.body;
+            const Reg_userExist = await UsersModel.findOne({ email: email });
+            if (Reg_userExist) {
+                return res.status(400).json({ massage: "User already registered" });
+            }
+            const userCreated = await UsersModel.create({ name, email, password });
+            res.status(200).json({ message: userCreated });
+            console.log("User Created Successfully");
+        }
+        else {
+            return res.status(404).json({ message: "pageName does not exist" });
         }
     } catch (err) {
         console.log("User Not Found");
