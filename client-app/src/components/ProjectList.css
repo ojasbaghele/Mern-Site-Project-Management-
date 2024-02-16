@@ -1,0 +1,159 @@
+.projectList-body{
+    margin: 0%;
+    font-weight: lighter;
+    font-family:monospace;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    top:0px; 
+    width: 95%; 
+    position: absolute;
+    right:0px;
+}
+h1{
+    margin-bottom: 0px;
+}
+input[type=text]:focus{
+    outline: 0px;
+}
+#headline{  
+    display: flex;
+    position:absolute;
+    top: 45px;
+    left:35px;
+    cursor: pointer;
+}
+#bArrow{
+    margin-right: 15px;
+}
+#pagename{
+    color: white;
+    font-size: 25px;
+}
+#bg1{
+    position:absolute;
+    width:100%;
+    right:0px;
+    top:-340px;
+    z-index: -1;
+}
+#logo-pl{
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70px;
+    height:70px;
+}
+.fill-form{
+    width: 97%;
+    height: 75vh;
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-top: 30px;
+    background-color: white;
+    padding: 12px;
+    border-radius: 8px;   
+}
+#search{
+    border:0px;
+    font-size: 17px;
+    height: 30px;
+}
+#sortSelect{
+    border: 0px;
+    margin-right: 10px;
+    color: rgba(79, 79, 79, 0.771);
+}
+.fa-magnifying-glass{
+    margin-right: 10px;
+    margin-top: 8px;
+}
+.searchSort{
+    display: flex;
+    margin: 10px;
+}
+#sortSelect{
+    color: rgb(32, 32, 32);
+}
+.Table{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+.searchDiv{
+    border-bottom: 2px solid black;
+    display: flex;
+    color: rgba(79, 79, 79, 0.771);
+}
+.sort{
+    display: flex;
+    position: absolute;
+    right:20px;
+    margin-right: 10px;
+}
+.btn{
+    width: 80px;
+}
+.btn-primary{
+    margin-left: 10px;
+    margin-right: 10px;
+    height:30px;
+    font-size: 12px;
+    border-radius: 20px;
+}
+.btn-outline-primary{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+    height:30px;
+    border-radius: 20px;
+}
+.tdLast{
+    display: flex;   
+}
+#sortLabel{
+    color: rgba(79, 79, 79, 0.771);
+    margin-top: 8px;
+}
+@media(max-width:950px){
+    #logo-pl{
+        display: none;
+    }
+    .fill-form{
+        width: 97%;
+        height: 80vh;
+        left: 15px;
+        right: auto;
+    }
+    .projectList-body{
+        width: 98%; 
+        right: auto;
+    }
+}
+@media(max-width: 450px){
+    .fill-form{
+        margin-top: 70px;
+    }
+    .projectList-body{
+        right:auto;
+        left:5px;
+    }
+    .fill-form{
+        margin-left: 10px;
+    }
+    #headline{
+        top:10px;
+        left:15px;
+    }
+    .sort{
+        right:0px;
+        margin-right: 0px;
+        font-size: 15px;
+    }
+    .searchDiv{
+        width: 50%;
+    }
+    #pagename{
+        font-size: 17px;
+    }
+}

@@ -1,0 +1,88 @@
+body{
+    background-color: rgb(231, 231, 231);
+}
+.sitePage{
+    height: 100vh;
+    display: flex;
+}
+.Navbar{
+    background-color: white;
+    height:100vh;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.navBtns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:170px;
+    justify-content: space-evenly;
+    position: absolute;
+    top:38%;
+}
+#dashicon{
+    color: rgba(82, 82, 82, 0.677);
+}
+#Logout-icon{
+    position: absolute;
+    bottom: 30px;
+    left:15px;
+}
+.iconBtn{
+    cursor: pointer;
+    padding:5px;
+}
+.iconBtn:hover{
+    box-shadow: 2px 2px 2px 2px #939393ba;    
+}
+#HeaderBG{
+    width: 100%;
+    z-index: -1;
+}
+.DivContent{
+    width: 96%;   
+}
+@media (max-width: 950px){
+    .Navbar{ 
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    #HeaderBG{
+        z-index: 1;
+    }
+    .navBtns {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        top: 10px;
+    }
+    #Logout-icon{
+        top: 10px;
+        bottom: auto;
+        right: 0px;
+        left:auto;
+        position: absolute;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    .iconBtn{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #dashicon{
+        display: none;
+    }
+    .DivContent{
+        width: 100%;   
+    }
+}

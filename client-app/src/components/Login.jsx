@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import '../assets/Login.css';
 import bg1 from '../assets/images/login-bg-1.svg';
-import logo from '../assets//images/Logo.svg';
-// import { useNavigate } from 'react-router-dom';
-// const navigate = useNavigate();
+import logo from '../assets/images/Logo.svg';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Login() {
   const [name, set_name] = useState("");
   const [email, set_email] = useState("");
   const [password, set_password] = useState("");
   const [pageName, setPageName] = useState("Sign Up");
+  const navigate = useNavigate();
 
 
   //! ------------------------ Page State  --------------------------- 
@@ -73,6 +74,7 @@ export default function Login() {
         console.log(response);
         if (response.ok) {
           alert("User Logged in successfully")
+          navigate("/Dashboard");
         } else {
           alert("response is Not 'OK' ");
         }
@@ -145,7 +147,7 @@ export default function Login() {
             <spam id='pass_warning' className='warning_txt hidden'><p>* Invalid Password</p></spam>
             <span id='f-password'><p>Forgot Password?</p></span>
           </div>
-          <button id='btnLOGIN' type='submit'> {pageName} </button>
+          <button id='btnLOGIN' onClick={LogIn} type='submit'> {pageName} </button>
         </form>
       </div>
     </>
