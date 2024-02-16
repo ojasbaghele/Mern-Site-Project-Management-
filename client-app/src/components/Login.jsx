@@ -17,10 +17,14 @@ export default function Login() {
   function loginBtn() {
     setPageName("Log In");
     document.getElementById('UserName').classList.add("hidden");
+    document.getElementById('pageSwitch_logBTN').classList.add("pageSwitch_Active");
+    document.getElementById('pageSwitch_signBTN').classList.remove("pageSwitch_Active");
   }
   function signupBtn() {
     setPageName("Sign Up");
     document.getElementById('UserName').classList.remove("hidden");
+    document.getElementById('pageSwitch_signBTN').classList.add("pageSwitch_Active");
+    document.getElementById('pageSwitch_logBTN').classList.remove("pageSwitch_Active");
   }
 
   //! ----------------------------------------------------------------
@@ -121,8 +125,8 @@ export default function Login() {
         <h3 id='color-w'>Online Project Management</h3>
 
         <div className='pageSwitch'>
-          <button onClick={loginBtn}>Log In</button>
-          <button onClick={signupBtn}>Sign up</button>
+          <button className="pageSwitch_BTN" id="pageSwitch_logBTN" onClick={loginBtn}>Log In</button>
+          <button className="pageSwitch_BTN pageSwitch_Active" id="pageSwitch_signBTN" onClick={signupBtn}>Sign up</button>
         </div>
         <form className='login-form' onSubmit={LogIn}>
           <h1 id="formHeading"> {pageName} </h1>
