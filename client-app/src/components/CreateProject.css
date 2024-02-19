@@ -66,6 +66,10 @@ textarea{
     margin-top: 10px;
     text-align:start;
 }
+#gitLinkInput{
+    height: 19px;
+    border-radius: 5px;
+}
 input textarea{
     margin: 0%;
 }

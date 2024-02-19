@@ -16,9 +16,9 @@ export default function CreateProject() {
         <img id='bArrow' src={bArrow} alt='./logos/back arrow.svg'/>
         <p>Create Project</p>
     </div>
-    <div className='fill-form'>
+    <form className='fill-form'>
     <div className='projectTheme'>
-        <textarea id='projectTheme' type='text' placeholder='Enter Project Theme'></textarea>
+        <textarea id='projectTheme' type='text' placeholder='Enter Project Name'></textarea>
         <button id='save_btn'>Save Project</button>
     </div>
     <div className='inputForm'>
@@ -26,84 +26,82 @@ export default function CreateProject() {
         <div className=' inputData'>
             <label>Reason</label>
             <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+                <option selected disabled></option>
+                <option value="Basic Learning">Basic Learning</option>
+                <option value="New Skill Developementl">New Skill Developement</option>
+                <option value="volvo">Skill Developement</option>
+                <option value="Skill Showcase">Skill Showcase</option>
             </select>
         </div>
         <div className='inputData'>
             <label>Category</label>
             <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+                <option selected disabled></option>
+                <option value="Personal">Personal</option>
+                <option value="Skill Based">Skill Based</option>
             </select>
         </div>
         <div className='inputData'>
             <label>Start Date as per Project Plan</label>
-            <input type="date" id="start" name="startDate" min="2023-12-10" max="2024-12-31"></input>
+            <input type="date" id="start" name="startDate" min="2024-01-01" max="2030-12-29"></input>
         </div>
     </div>
     <div className='inputRow inputRow2'>
         <div className='inputData'>
             <label>Type</label>
             <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+                <option selected disabled></option>
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="Backend">Backend</option>
             </select>
         </div>
         <div className='inputData'>
             <label>Priority</label>
             <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+                <option selected disabled></option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+                <option value="Very Low">Very Low</option>
             </select>
         </div>
         <div className=' inputData'>
             <label>End Date as per Project Plan</label>
-            <input type="date" id="start" name="startDate" min="2023-12-10" max="2024-12-31"></input>
+            <input type="date" id="start" name="startDate" min="2024-01-01" max="2030-12-29"></input>
         </div>
     </div>
     <div className='inputRow inputRow3'>
         <div className='inputData'>
-            <label>Division</label>
-            <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+            <label>Skill</label>
+            <select required>
+                <option selected disabled></option>
+                <option value="volvo">Java</option>
+                <option value="saab">JavaScript</option>
+                <option value="opel">React Js</option>
+                <option value="opel">MERNStack</option>
+                <option value="audi">Express Js</option>
             </select>
         </div>
         <div className='inputData'>
-            <label>Department</label>
-            <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
+            <label>Git Link</label>
+            <textarea id='gitLinkInput' type='text' placeholder=''></textarea>
         </div>
         <div className='inputData'>
-            <label>Location</label>
+            <label>Status</label>
             <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+                <option selected disabled></option>
+                <option value="Started">Started</option>
+                <option value="On Going">On Going</option>
+                <option value="Near Completion">Near Completion</option>
+                <option value="Completed">Completed</option>
             </select>
-            <p>Status:<b>Registered</b></p>
+            {/* <p>Status:<b>Registered</b></p> */}
         </div>
         
     </div>
     </div>
-    </div>
-
+    </form>
 
     </div>
     </>
