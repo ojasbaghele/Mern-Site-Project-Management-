@@ -1,33 +1,34 @@
 const UsersModel = require("../model/userSchema");
+const ProjectModel = require("../model/projectSchema");
 
-//TODO: HOME Page Of Site =>
-async function home_page(req, res) {
-    try {
-        res
-            .status(200)
-            .send("Welcome to home_page....");
+    //TODO: HOME Page Of Site =>
+// async function home_page(req, res) {
+//     try {
+//         res
+//             .status(200)
+//             .send("Welcome to home_page....");
 
-    } catch (error) {
-        console.log(error);
-    }
-}
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
-//TODO: Register The user if not already registered =>
-async function register(req, res) {
-    // console.log(req.body);
-    try {
-        const { name, email, password } = req.body;
-        const Reg_userExist = await UsersModel.findOne({ email: email });
-        if (Reg_userExist) {
-            return res.status(400).json({ massage: "User already registered" });
-        }
-        const userCreated = await UsersModel.create({ name, email, password });
-        res.status(200).json({ message: userCreated });
+    //TODO: Register The user if not already registered =>
+// async function register(req, res) {
+//     // console.log(req.body);
+//     try {
+//         const { name, email, password } = req.body;
+//         const Reg_userExist = await UsersModel.findOne({ email: email });
+//         if (Reg_userExist) {
+//             return res.status(400).json({ massage: "User already registered" });
+//         }
+//         const userCreated = await UsersModel.create({ name, email, password });
+//         res.status(200).json({ message: userCreated });
 
-    } catch (error) {
-        res.status(500).json({ message: "internal server error" });
-    }
-}
+//     } catch (error) {
+//         res.status(500).json({ message: "internal server error" });
+//     }
+// }
 
 //TODO: Check if userdata is stored in database, Check if email & password are correct =>
 async function login(req, res) {
